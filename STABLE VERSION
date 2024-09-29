@@ -1,0 +1,898 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package test.dialog;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author User
+ */
+public class TESTDIALOG {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        boolean usab = true;
+        while (usab) {
+            String name = JOptionPane.showInputDialog("Input Name Before You Enter Our Shop", "Hogwart's Bookstore");
+            if (name == null) {
+                String shesh = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo You want to exit?\nIf Yes, Input Y.\nOtherwise, N.");
+                switch (shesh) {
+                    case "y":
+                        JOptionPane.showMessageDialog(null, "Thank You For Coming!");
+                        break;
+                    case "Y":
+                        JOptionPane.showMessageDialog(null, "Thank You For Coming!");
+                        break;
+                    case "n":
+                        continue;
+                    case "N":
+                        continue;
+                    default:
+                        JOptionPane.showMessageDialog(null, "PLEASE INPUT Y OR N ONLY");
+                        continue;
+                }
+                break;
+            }
+
+            boolean keepShopping = true;
+            while (keepShopping) {
+                String b = JOptionPane.showInputDialog("Hello, " + name + "! Welcome to Hogwart's Bookstore.\n___________________________________\n\nInput 'Y' to Proceed\n___________________________________\n\nInput 'N' to Exit\n___________________________________\n\nInput 'change' if you wish to change name\n\n");
+                if (b == null) {
+                    keepShopping = true;
+                    String b1 = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo You want to exit?\nIf Yes, Input Y.\nOtherwise, N.");
+                    switch (b1) {
+                        case "y":
+                            keepShopping = false;
+                            usab = false;
+                            JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                            break;
+                        case "Y":
+                            keepShopping = false;
+                            usab = false;
+                            JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                            break;
+                        case "n":
+                            continue;
+                        case "N":
+                            continue;
+                        default:
+                            JOptionPane.showMessageDialog(null, "PLEASE INPUT Y OR N ONLY");
+                            continue;
+                    }
+                    break;
+                }
+
+                if (b.equalsIgnoreCase("n")) {
+                    usab = false;
+                    JOptionPane.showMessageDialog(null, "Thank You, " + name + "! Come Again!");
+                    break;
+                }
+
+                if (b.equalsIgnoreCase("change")) {
+                    JOptionPane.showMessageDialog(null, "Press Ok to Proceed");
+                    usab = true;
+                    break;
+                }
+
+                if (b.equalsIgnoreCase("y")) {
+                    boolean pick1 = true;
+                    String piliBruh = JOptionPane.showInputDialog("Input Y to Show Books List:");
+                    if (piliBruh == null) {
+                        pick1 = false;
+                        String b1 = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo You want to exit?\nIf Yes, Input Y.\nOtherwise, N.");
+                        switch (b1) {
+                            case "y":
+                                keepShopping = false;
+                                usab = false;
+                                JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                                break;
+                            case "Y":
+                                keepShopping = false;
+                                usab = false;
+                                JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                                break;
+                            case "n":
+                                continue;
+                            case "N":
+                                continue;
+                            default:
+                                JOptionPane.showMessageDialog(null, "PLEASE INPUT Y OR N ONLY");
+                                continue;
+                        }
+                        break;
+                    }
+
+                    if (piliBruh.equalsIgnoreCase("y")) {
+                        pick1 = true;
+                        if (pick1) {
+                            String pick = JOptionPane.showInputDialog("""
+                                                 Book List:  
+                                                 __________________________________________________
+                                                              
+                                                 Book 1: Harry Potter and the Sorcerer's Stone
+                                                 Book 2: Harry Potter and the Chamber of Secrets
+                                                 Book 3: Harry Potter and the Prisoner of Azkaban
+                                                 Book 4: Harry Potter and the Goblet of Fire
+                                                 Book 5: Harry Potter and the Order of the Phoenix
+                                                 Book 6: Harry Potter and the Half-Blood Prince
+                                                 Book 7: Harry Potter and the Deathly Hallows
+                                                 __________________________________________________
+                                                              
+                                                 Input Y To Proceed:
+                                                 __________________________________________________ 
+                                                              
+                                                              """);
+
+                            int book1 = 800, book2 = 750, book3 = 900, book4 = 820, book5 = 780, book6 = 830, book7 = 720;
+                            int bookPrice = 0;
+                            int total = 0;
+                            String resibo = "";
+                            if (pick == null) {
+                                String b1 = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo You want to exit?\nIf Yes, Input Y.\nOtherwise, N.");
+                                switch (b1) {
+                                    case "y":
+                                        keepShopping = false;
+                                        usab = false;
+                                        pick1 = false;
+                                        JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                                        break;
+                                    case "Y":
+                                        keepShopping = false;
+                                        usab = false;
+                                        pick1 = false;
+                                        JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                                        break;
+                                    case "n":
+                                        continue;
+                                    case "N":
+                                        continue;
+                                    default:
+                                        JOptionPane.showMessageDialog(null, "PLEASE INPUT Y OR N ONLY");
+                                        continue;
+                                }
+                                break;
+                            }
+
+                            while (pick.equalsIgnoreCase("y")) {
+                                boolean balik = true;
+
+                                if (balik) {
+                                    String pili = JOptionPane.showInputDialog("""
+                                                 Books With Price List: 
+                                                 __________________________________________________
+                                                 
+                                                 Book 1: Harry Potter and the Sorcerer's Stone------------Php 800
+                                                 Book 2: Harry Potter and the Chamber of Secrets--------Php 750
+                                                 Book 3: Harry Potter and the Prisoner of Azkaban--------Php 900
+                                                 Book 4: Harry Potter and the Goblet of Fire------------------Php 820
+                                                 Book 5: Harry Potter and the Order of the Phoenix-------Php 780
+                                                 Book 6: Harry Potter and the Half-Blood Prince------------Php 830
+                                                 Book 7: Harry Potter and the Deathly Hallows--------------Php 720
+                                                 
+                                                 __________________________________________________                     
+                                                                      
+                                                 Input Book Number: 
+                                                 Input N, To Exit: 
+                                                 __________________________________________________
+                                                                              
+                                                                      """);
+
+                                    if (pili == null) {
+                                        String b1 = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo you want to go back to the main menu?\n\nIf Yes, Input Y.\nOtherwise, N.");
+                                        if (b1 == null) {
+                                            continue;
+                                        }
+                                        switch (b1) {
+                                            case "y":
+
+                                                JOptionPane.showMessageDialog(null, "You are now to be redirected to the main menu");
+                                                break;
+                                            case "Y":
+
+                                                JOptionPane.showMessageDialog(null, "You are now to be redirected to the main menu");
+                                                break;
+                                            case "n":
+                                                continue;
+                                            case "N":
+                                                continue;
+                                            default:
+                                                JOptionPane.showMessageDialog(null, "PLEASE INPUT Y OR N ONLY");
+                                                continue;
+                                        }
+
+                                        break;
+                                    }
+                                    if (!balik || !pick1 || !usab) {
+                                        break;
+                                    }
+                                    if (pili.equalsIgnoreCase("n")) {
+                                        JOptionPane.showMessageDialog(null, "Thank You For Coming, " + name + "!");
+                                        usab = false;
+                                        keepShopping = false;
+                                        break;
+                                    }
+                                    String pickBook = "";
+                                    switch (pili) {
+                                        case "1":
+                                            pickBook = "\nBook 1: Harry Potter and the Sorcerer's Stone\nPrice: Php 800\n";
+                                            bookPrice = book1;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Sorcerer's Stone\nPrice: Php " + book1 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "2":
+                                            pickBook = "\nBook 2: Harry Potter and the Chamber of Secrets\nPrice: Php 750\n";
+                                            bookPrice = book2;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Chamber of Secrets\nPrice: Php " + book2 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "3":
+                                            pickBook = "\nBook 3: Harry Potter and the Prisoner of Azkaban\nPrice: Php 900\n";
+                                            bookPrice = book3;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Prisoner of Azkaban\nPrice: Php " + book3 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "4":
+                                            pickBook = "\nBook 4: Harry Potter and the Goblet of Fire\nPrice: Php 820\n";
+                                            bookPrice = book4;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Goblet of Fire\nPrice: Php " + book4 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "5":
+                                            pickBook = "\nBook 5: Harry Potter and the Order of the Phoenix\nPrice: Php 780\n";
+                                            bookPrice = book5;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Order of the Phoenix\nPrice: Php " + book5 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "6":
+                                            pickBook = "\nBook 6: Harry Potter and the Half-Blood Prince\nPrice: Php 830\n";
+                                            bookPrice = book6;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Half-Blood Prince\nPrice: Php " + book6 + "\n____________________________________________\n\n");
+                                            break;
+                                        case "7":
+                                            pickBook = "\nBook 7: Harry Potter and the Deathly Hallows\nPrice: Php 720\n";
+                                            bookPrice = book7;
+                                            JOptionPane.showMessageDialog(null, "____________________________________________\n\nYou've chosen: Harry Potter and the Deathly Hallows\nPrice: Phpyy " + book7 + "\n____________________________________________\n\n");
+                                            break;
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "INVALID INPUT: CHOOSE ONLY FROM '1-7'");
+                                            continue;
+
+                                    }
+
+                                    int quantity = 0;
+
+                                    while (quantity == 0) {
+                                        String kwant = JOptionPane.showInputDialog("Input Quantity [MAX QUANTITY: 5]:");
+                                        if (kwant == null) {
+                                            JOptionPane.showMessageDialog(null, "PLEASE INPUT A QUANTITY");
+
+                                            continue;
+                                        }
+                                        switch (kwant) {
+                                            case "1":
+                                                quantity = 1;
+                                                break;
+                                            case "2":
+                                                quantity = 2;
+                                                break;
+                                            case "3":
+                                                quantity = 3;
+                                                break;
+                                            case "4":
+                                                quantity = 4;
+                                                break;
+                                            case "5":
+                                                quantity = 5;
+                                                break;
+                                            default:
+                                                JOptionPane.showMessageDialog(null, "INPUT VALUES BETWEEN 1-5 ONLY");
+
+                                                continue;
+
+                                        }
+                                    }
+
+                                    total += bookPrice * quantity;
+                                    resibo += pickBook + "Quantity: " + quantity + " Book/s" + "\nTOTAL: Php " + bookPrice * quantity;
+                                    JOptionPane.showMessageDialog(null, "This is your current total payment: Php " + total + "");
+                                    String add = JOptionPane.showInputDialog("\nDo you want to add another book?\nInput 'Y' if Yes, 'N' if No:");
+                                    if (add == null) {
+                                        total = 0;
+                                        break;
+                                    }
+
+                                    if (add.equalsIgnoreCase("n")) {
+                                        balik = false;
+                                    }
+
+                                    if (add.equalsIgnoreCase("y")) {
+                                        balik = true;
+                                        continue;
+                                    }
+                                    boolean cost = true;
+                                    while (cost) {
+                                        String bayad = JOptionPane.showInputDialog("Final total cost: Php " + total + "\nInput 'Y' To proceed");
+                                        if (bayad == null) {
+                                            JOptionPane.showMessageDialog(null, "Please Input Y to proceed");
+
+                                            continue;
+                                        }
+                                        while (bayad.equalsIgnoreCase("y")) {
+                                            String sureBa = JOptionPane.showInputDialog("\nDo you really want to checkout?\nIf Yes, Input 'Y' To Proceed Paying:\nTo Re-Pick Orders, Input N:");
+
+                                            if (sureBa == null) {
+                                                JOptionPane.showMessageDialog(null, "Please Input Y or N");
+                                                continue;
+                                            }
+                                            if (sureBa.equalsIgnoreCase("Y")) {
+                                                String bayadLods = JOptionPane.showInputDialog("AMOUNT TO BE PAID: Php " + total + "\nInput Cash: ");
+                                                if (bayadLods == null) {
+                                                    JOptionPane.showMessageDialog(null, "Please Input an Amount");
+                                                    continue;
+                                                }
+                                                if (bayadLods.isBlank()) {
+                                                    JOptionPane.showMessageDialog(null, "Please Input an Amount");
+                                                    continue;
+                                                }
+                                                int busetBayad = Integer.parseInt(bayadLods);
+
+                                                int change = busetBayad - total;
+                                                if (busetBayad >= total) {
+                                                    JOptionPane.showMessageDialog(null, "\nPayment Successful. Your change is Php " + change);   //successful payment
+                                                    String shet = JOptionPane.showInputDialog("\nInput Y, To Buy Again\nInput 'R' To Show Receipt");
+                                                    if (shet == null) {
+                                                        total = 0;
+                                                        break;
+                                                    }
+
+                                                    if (shet.equalsIgnoreCase("y")) {
+                                                        balik = true;
+                                                        total = 0;
+                                                        resibo = "";
+                                                        cost = false;
+                                                        break;
+                                                    }
+                                                    while (shet.equalsIgnoreCase("r")) {
+                                                        String receipt4 = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: " + busetBayad + "\nTotal Checkout Amount: Php " + total + "\nCHANGE: Php " + change + "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============\nInput 'join' to take part in our promo to get\na chance to win a 30% off discount voucher.");
+                                                        if (receipt4.equalsIgnoreCase("join")) { 
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO OUR TRIVIA QUIZ\n\nINSTRUCTIONS:\nEVERY CORRECT ANSWER IS EQUIVALENT TO 10% OFF AND THERE ARE ONLY 3 QUESTIONS\nGOODLUCK, " + name + "!");
+                                                            int discount = 0; double percent=0; int correctAns=0; 
+                                                            int discount2 = 0; double percent2=0; int correctAns2=0;
+                                                             int discount3 = 0; double percent3=0; int correctAns3=0; 
+                                                            String trivia = JOptionPane.showInputDialog("FIRST QUESTION:\n -Who is known as 'the boy who lived'?");
+                                                           
+                                                            if (!trivia.equalsIgnoreCase("Harry Potter")) { percent=0; discount=0; correctAns=0;
+                                                                JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HARRY POTTER'!");
+
+                                                            }
+                                                            if (trivia.equalsIgnoreCase("Harry Potter")) {
+                                                                discount = 10; percent=0.1;  correctAns=1;
+                                                                JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HARRY POTTER'!\nDISCOUNT WON: 10% OFF");
+                                                          
+                                                            }
+                                                                String trivia2 = JOptionPane.showInputDialog("SECOND QUESTION:\n -Who is known as the 'The brightest witch of her age?'");
+                                                                if (!trivia2.equalsIgnoreCase("Hermione Granger")) { percent2=0; discount2=0; correctAns2=0;
+                                                                    JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HERMIONE GRANGER'!");
+
+                                                                }
+                                                                if (trivia2.equalsIgnoreCase("Hermione Granger")) {
+                                                                     JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HERMIONE GRANGER'!\nDISCOUNT WON: 10% OFF");
+                                                                    discount2 = 10; percent2=0.1; correctAns2=1;
+                                                              
+                                                                }
+                                                                    
+                                                                    String trivia3 = JOptionPane.showInputDialog("THIRD QUESTION:\n -Who is known as 'the king?'");
+                                                                    if (!trivia3.equalsIgnoreCase("Ronald Weasley")) { percent3=0; discount3=0; correctAns3=0;
+                                                                        JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'RONALD WEASLEY'!");
+
+                                                                    }
+                                                                    if (trivia3.equalsIgnoreCase("Ronald Weasley")) {
+                                                                        discount3 = 10; percent3=0.1; correctAns3=1;
+                                                                        JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'RONALD WEASLEY'!\nDISCOUNT WON: 10% OFF");
+
+                                                                    } int won= discount+discount2+discount3;
+                                                                    String usa= won+"% OFF";
+                                                                   double off = percent+percent2+percent3;
+                                                                   int tama= correctAns+correctAns2+correctAns3;
+                                                                   String ibutang= "CORRECT ANSWERS: "+tama;
+                                                                   double Diskawnt= total*off;
+                                                                   double mao= total-Diskawnt;
+                                                                   double maoNani= busetBayad-mao;
+                                                                   
+                                                                   String withDiscount = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: Php" + busetBayad + "\nTotal Checkout Amount: Php " + total + "\n\n"+ibutang+"\nDISCOUNT: "+usa+ "\nTotal Checkout Amount With Discount: Php "+mao+"\nCHANGE WITHOUT DISCOUNT: Php " + change +"\nCHANGE NOW: Php "+maoNani+ "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============");
+                                                                   if (withDiscount.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (withDiscount.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (withDiscount.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            discount = 0;  percent=0;  correctAns=0; 
+                                                         discount2 = 0; percent2=0;  correctAns2=0;
+                                                    discount3 = 0;  percent3=0;  correctAns3=0; 
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        } 
+                                                                
+
+                                                            
+
+                                                        }
+
+                                                        if (receipt4.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (receipt4.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (receipt4.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        }
+
+                                                    }
+                                                    if (!balik || !pick1 || !keepShopping || !usab) {
+                                                        break;
+                                                    }
+
+                                                    break;
+                                                }
+                                                if (busetBayad < total) {
+                                                    int kulangPre = total - busetBayad;
+                                                    String kulangBuset = JOptionPane.showInputDialog(null, "\nINSUFFICIENT CASH\nADD ATLEAST  GREATER THAN OR EQUAL TO THIS AMOUNT: Php " + kulangPre);
+                                                    int dungag = Integer.parseInt(kulangBuset);
+                                                    int kulang1 = kulangPre - dungag;
+                                                    int sukli = dungag - kulangPre;
+                                                    if (dungag >= kulangPre) {
+                                                        JOptionPane.showMessageDialog(null, "\nPayment Successful. Your change is Php " + sukli);    //successful payment
+
+                                                        int TotalPre = busetBayad + dungag;
+                                                        String shet4 = JOptionPane.showInputDialog("\nInput Y, To Buy Again\nInput 'R' To Show Receipt");
+                                                        if (shet4.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            break;
+                                                        }                                     //okay nani deri
+                                                        while (shet4.equalsIgnoreCase("r")) {
+                                                            String receipt2 = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: " + TotalPre + "\nTotal Checkout Amount: Php " + total + "\nCHANGE: Php " + sukli + "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============\nInput 'join' to take part in our promo to get\na chance to win a 30% off discount voucher.");
+                                                           if (receipt2.equalsIgnoreCase("join")) { 
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO OUR TRIVIA QUIZ\n\nINSTRUCTIONS:\nEVERY CORRECT ANSWER IS EQUIVALENT TO 10% OFF AND THERE ARE ONLY 3 QUESTIONS\nGOODLUCK, " + name + "!");
+                                                            int discount = 0; double percent=0; int correctAns=0; 
+                                                            int discount2 = 0; double percent2=0; int correctAns2=0;
+                                                             int discount3 = 0; double percent3=0; int correctAns3=0; 
+                                                            String trivia = JOptionPane.showInputDialog("FIRST QUESTION:\n -Who is known as 'the boy who lived'?");
+                                                           
+                                                            if (!trivia.equalsIgnoreCase("Harry Potter")) { percent=0; discount=0; correctAns=0;
+                                                                JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HARRY POTTER'!");
+
+                                                            }
+                                                            if (trivia.equalsIgnoreCase("Harry Potter")) {
+                                                                discount = 10; percent=0.1;  correctAns=1;
+                                                                JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HARRY POTTER'!\nDISCOUNT WON: 10% OFF");
+                                                          
+                                                            }
+                                                                String trivia2 = JOptionPane.showInputDialog("SECOND QUESTION:\n -Who is known as the 'The brightest witch of her age?'");
+                                                                if (!trivia2.equalsIgnoreCase("Hermione Granger")) { percent2=0; discount2=0; correctAns2=0;
+                                                                    JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HERMIONE GRANGER'!");
+
+                                                                }
+                                                                if (trivia2.equalsIgnoreCase("Hermione Granger")) {
+                                                                     JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HERMIONE GRANGER'!\nDISCOUNT WON: 10% OFF");
+                                                                    discount2 = 10; percent2=0.1; correctAns2=1;
+                                                              
+                                                                }
+                                                                    
+                                                                    String trivia3 = JOptionPane.showInputDialog("THIRD QUESTION:\n -Who is known as 'the king?'");
+                                                                    if (!trivia3.equalsIgnoreCase("Ronald Weasley")) { percent3=0; discount3=0; correctAns3=0;
+                                                                        JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'RONALD WEASLEY'!");
+
+                                                                    }
+                                                                    if (trivia3.equalsIgnoreCase("Ronald Weasley")) {
+                                                                        discount3 = 10; percent3=0.1; correctAns3=1;
+                                                                        JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'RONALD WEASLEY'!\nDISCOUNT WON: 10% OFF");
+
+                                                                    } int won= discount+discount2+discount3;
+                                                                    String usa= won+"% OFF";
+                                                                   double off = percent3+percent2+percent;
+                                                                   int tama= correctAns+correctAns2+correctAns3;
+                                                                   String ibutang= "CORRECT ANSWERS: "+tama;
+                                                                   double Diskawnt= total*off;
+                                                                   double mao= total-Diskawnt;
+                                                                   double maoNani= TotalPre-mao;
+                                                                   
+                                                                   String withDiscount = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: Php" + TotalPre + "\nTotal Checkout Amount: Php " + total + "\n\n"+ibutang+"\nDISCOUNT: "+usa+ "\nTotal Checkout Amount With Discount: Php "+mao+"\nCHANGE WITHOUT DISCOUNT: Php " + sukli +"\nCHANGE NOW: Php "+maoNani+ "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============");
+                                                                   if (withDiscount.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (withDiscount.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (withDiscount.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            discount = 0;  percent=0;  correctAns=0; 
+                                                         discount2 = 0; percent2=0;  correctAns2=0;
+                                                    discount3 = 0;  percent3=0;  correctAns3=0; 
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        } 
+                                                                
+
+                                                            
+
+                                                        }
+
+                                                        if (receipt2.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (receipt2.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (receipt2.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        }
+                                                            if (receipt2.isBlank()) {
+                                                                JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                                continue;
+                                                            }
+                                                        }
+                                                        break;
+                                                    }
+
+                                                    String shet3 = JOptionPane.showInputDialog("IT IS STILL INSUFFICIENT\nREMAININING AMOUNT TO BE PAID: Php " + kulang1 + "\nInput Cash:");
+                                                    int dungagPa = Integer.parseInt(shet3);
+                                                    int bayadDyud = kulang1 - dungagPa;
+                                                    if (dungagPa >= kulang1) {
+                                                        int sukli6 = dungagPa - kulang1;
+                                                        JOptionPane.showMessageDialog(null, "\nPayment Successful. Your change is Php " + sukli6);
+                                                        int TotalPre5 = busetBayad + dungagPa + dungag;
+                                                        String shet4 = JOptionPane.showInputDialog("\nInput Y, To Buy Again\nInput 'R' To Show Receipt");
+                                                        if (shet4.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            break;
+                                                        }                                     //tama here
+                                                        while (shet4.equalsIgnoreCase("r")) {
+                                                            String receipt2 = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: " + TotalPre5 + "\nTotal Checkout Amount: Php " + total + "\nCHANGE: Php " + sukli6 + "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============\nInput 'join' to take part in our promo to get\na chance to win a 30% off discount voucher.");
+                                                            if (receipt2.equalsIgnoreCase("join")) { 
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO OUR TRIVIA QUIZ\n\nINSTRUCTIONS:\nEVERY CORRECT ANSWER IS EQUIVALENT TO 10% OFF AND THERE ARE ONLY 3 QUESTIONS\nGOODLUCK, " + name + "!");
+                                                            int discount = 0; double percent=0; int correctAns=0; 
+                                                            int discount2 = 0; double percent2=0; int correctAns2=0;
+                                                             int discount3 = 0; double percent3=0; int correctAns3=0; 
+                                                            String trivia = JOptionPane.showInputDialog("FIRST QUESTION:\n -Who is known as 'the boy who lived'?");
+                                                           
+                                                            if (!trivia.equalsIgnoreCase("Harry Potter")) { percent=0; discount=0; correctAns=0;
+                                                                JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HARRY POTTER'!");
+
+                                                            }
+                                                            if (trivia.equalsIgnoreCase("Harry Potter")) {
+                                                                discount = 10; percent=0.1;  correctAns=1;
+                                                                JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HARRY POTTER'!\nDISCOUNT WON: 10% OFF");
+                                                          
+                                                            }
+                                                                String trivia2 = JOptionPane.showInputDialog("SECOND QUESTION:\n -Who is known as the 'The brightest witch of her age?'");
+                                                                if (!trivia2.equalsIgnoreCase("Hermione Granger")) { percent2=0; discount2=0; correctAns2=0;
+                                                                    JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HERMIONE GRANGER'!");
+
+                                                                }
+                                                                if (trivia2.equalsIgnoreCase("Hermione Granger")) {
+                                                                     JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HERMIONE GRANGER'!\nDISCOUNT WON: 10% OFF");
+                                                                    discount2 = 10; percent2=0.1; correctAns2=1;
+                                                              
+                                                                }
+                                                                    
+                                                                    String trivia3 = JOptionPane.showInputDialog("THIRD QUESTION:\n -Who is known as 'the king?'");
+                                                                    if (!trivia3.equalsIgnoreCase("Ronald Weasley")) { percent3=0; discount3=0; correctAns3=0;
+                                                                        JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'RONALD WEASLEY'!");
+
+                                                                    }
+                                                                    if (trivia3.equalsIgnoreCase("Ronald Weasley")) {
+                                                                        discount3 = 10; percent3=0.1; correctAns3=1;
+                                                                        JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'RONALD WEASLEY'!\nDISCOUNT WON: 10% OFF");
+
+                                                                    } int won= discount+discount3+discount2;
+                                                                    String usa= won+"% OFF";
+                                                                   double off = percent2+percent3+percent;
+                                                                   int tama= correctAns+correctAns2+correctAns3;
+                                                                   String ibutang= "CORRECT ANSWERS: "+tama;
+                                                                   double Diskawnt= total*off;
+                                                                   double mao= total-Diskawnt;
+                                                                   double maoNani= TotalPre5-mao;
+                                                                   
+                                                                   String withDiscount = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: Php" + TotalPre5 + "\nTotal Checkout Amount: Php " + total + "\n\n"+ibutang+"\nDISCOUNT: "+usa+ "\nTotal Checkout Amount With Discount: Php "+mao+"\nCHANGE WITHOUT DISCOUNT: Php " + sukli6 +"\nCHANGE NOW: Php "+maoNani+ "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============");
+                                                                   if (withDiscount.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (withDiscount.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (withDiscount.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            discount = 0;  percent=0;  correctAns=0; 
+                                                         discount2 = 0; percent2=0;  correctAns2=0;
+                                                    discount3 = 0;  percent3=0;  correctAns3=0; 
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        } 
+                                                                
+
+                                                            
+
+                                                        }
+
+                                                        if (receipt2.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (receipt2.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (receipt2.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        }
+                                                            if (receipt2.isBlank()) {
+                                                                JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                                continue;
+                                                            }
+                                                        }
+
+                                                        break;
+                                                    }
+                                                    if (dungagPa < kulang1) {
+                                                        JOptionPane.showMessageDialog(null, "==================WARNING==================\n\nPLEASE PAY THIS REMAINING AMOUNT: Php " + bayadDyud + "\n\nUNABLE TO PAY WILL RESULT TO A FAILED TRANSACTION", null, JOptionPane.WARNING_MESSAGE);
+
+                                                        String Haynaku = JOptionPane.showInputDialog("AMOUNT TO BE PAID: Php " + bayadDyud);
+                                                        if (dungagPa > kulang1) {
+                                                            int sukli1 = bayadDyud - dungag;
+                                                            JOptionPane.showMessageDialog(null, "\nPayment Successful. Your change is Php " + sukli1);    // MALI HERE!!!! //UPDATE, TAMA NA HERE
+
+                                                        }
+                                                        int kulang2 = Integer.parseInt(Haynaku);
+
+                                                        int sukli2 = kulang2 - bayadDyud;
+                                                        if (kulang2 >= bayadDyud) {
+                                                            JOptionPane.showMessageDialog(null, "\nPayment Successful. Your change is Php " + sukli2);//successful payment
+                                                            int TotalPre2 = busetBayad + dungagPa + dungag + kulang2;
+                                                            String shet4 = JOptionPane.showInputDialog("\nInput Y, To Buy Again\nInput 'R' To Show Receipt");
+                                                            if (shet4.equalsIgnoreCase("y")) {
+                                                                balik = true;
+                                                                total = 0;
+                                                                cost = false;
+                                                                resibo = "";
+                                                                break;
+                                                            }                                     //tama here
+                                                            if (shet4.equalsIgnoreCase("r")) {
+                                                                String receipt2 = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: " + TotalPre2 + "\nTotal Checkout Amount: Php " + total + "\nCHANGE: Php " + sukli2 + "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============\nInput 'join' to take part in our promo to get\na chance to win a 30% off discount voucher.");
+                                                                if (receipt2.equalsIgnoreCase("join")) { 
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO OUR TRIVIA QUIZ\n\nINSTRUCTIONS:\nEVERY CORRECT ANSWER IS EQUIVALENT TO 10% OFF AND THERE ARE ONLY 3 QUESTIONS\nGOODLUCK, " + name + "!");
+                                                            int discount = 0; double percent=0; int correctAns=0; 
+                                                            int discount2 = 0; double percent2=0; int correctAns2=0;
+                                                             int discount3 = 0; double percent3=0; int correctAns3=0; 
+                                                            String trivia = JOptionPane.showInputDialog("FIRST QUESTION:\n -Who is known as 'the boy who lived'?");
+                                                           
+                                                            if (!trivia.equalsIgnoreCase("Harry Potter")) { percent=0; discount=0; correctAns=0;
+                                                                JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HARRY POTTER'!");
+
+                                                            }
+                                                            if (trivia.equalsIgnoreCase("Harry Potter")) {
+                                                                discount = 10; percent=0.1;  correctAns=1;
+                                                                JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HARRY POTTER'!\nDISCOUNT WON: 10% OFF");
+                                                          
+                                                            }
+                                                                String trivia2 = JOptionPane.showInputDialog("SECOND QUESTION:\n -Who is known as the 'The brightest witch of her age?'");
+                                                                if (!trivia2.equalsIgnoreCase("Hermione Granger")) { percent2=0; discount2=0; correctAns2=0;
+                                                                    JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'HERMIONE GRANGER'!");
+
+                                                                }
+                                                                if (trivia2.equalsIgnoreCase("Hermione Granger")) {
+                                                                     JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'HERMIONE GRANGER'!\nDISCOUNT WON: 10% OFF");
+                                                                    discount2 = 10; percent2=0.1; correctAns2=1;
+                                                              
+                                                                }
+                                                                    
+                                                                    String trivia3 = JOptionPane.showInputDialog("THIRD QUESTION:\n -Who is known as 'the king?'");
+                                                                    if (!trivia3.equalsIgnoreCase("Ronald Weasley")) { percent3=0; discount3=0; correctAns3=0;
+                                                                        JOptionPane.showMessageDialog(null, "SORRY, INCORRECT ANSWER. THE ANSWER IS 'RONALD WEASLEY'!");
+
+                                                                    }
+                                                                    if (trivia3.equalsIgnoreCase("Ronald Weasley")) {
+                                                                        discount3 = 10; percent3=0.1; correctAns3=1;
+                                                                        JOptionPane.showMessageDialog(null, "CORRECT! THE ANSWER IS 'RONALD WEASLEY'!\nDISCOUNT WON: 10% OFF");
+
+                                                                    } int won= discount3+discount2+discount;
+                                                                    String usa= won+"% OFF";
+                                                                   double off = percent2+percent3+percent;
+                                                                   int tama= correctAns2+correctAns3+correctAns;
+                                                                   String ibutang= "CORRECT ANSWERS: "+tama;
+                                                                   double Diskawnt= total*off;
+                                                                   double mao= total-Diskawnt;
+                                                                   double maoNani= TotalPre2-mao;
+                                                                   
+                                                                   String withDiscount = JOptionPane.showInputDialog("=====HOGWART'S BOOKSTORE======\n                              EST 2005\n\n                              RECEIPT:\nITEM/S: \n" + resibo + "\n==============\nYour Cash: Php" + TotalPre2 + "\nTotal Checkout Amount: Php " + total + "\n\n"+ibutang+"\nDISCOUNT: "+usa+ "\nTotal Checkout Amount With Discount: Php "+mao+"\nCHANGE WITHOUT DISCOUNT: Php " + sukli2 +"\nCHANGE NOW: Php "+maoNani+ "\n==============\nInput Y To Buy Again\nInput N, To Exit\n==============");
+                                                                   if (withDiscount.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (withDiscount.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (withDiscount.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            discount = 0;  percent=0;  correctAns=0; 
+                                                         discount2 = 0; percent2=0;  correctAns2=0;
+                                                    discount3 = 0;  percent3=0;  correctAns3=0; 
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        } 
+                                                                
+
+                                                            
+
+                                                        }
+
+                                                        if (receipt2.isBlank()) {
+                                                            JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                            continue;
+                                                        }
+
+                                                        if (receipt2.equalsIgnoreCase("n")) {
+                                                            JOptionPane.showMessageDialog(null, "YOU ARE NOW TO BE REDIRECTED TO THE BOOKLIST MENU");
+                                                            balik = false;
+
+                                                            cost = false;
+                                                            break;
+
+                                                        }
+                                                        if (receipt2.equalsIgnoreCase("y")) {
+                                                            balik = true;
+                                                            total = 0;
+                                                            cost = false;
+                                                            resibo = "";
+                                                            
+                                                            break;
+                                                        }
+                                                        if (!balik) {
+                                                            break;
+                                                        }
+                                                                if (receipt2.isBlank()) {
+                                                                    JOptionPane.showMessageDialog(null, "ERROR DON'T LEAVE IT BLANK");
+                                                                    continue;
+                                                                }
+                                                                if (receipt2 == null) {
+                                                                    String ngutana = JOptionPane.showInputDialog("It seems that you entered 'cancel'.\nDo you want to go back to the main menu?\n\nIf Yes, Input Y.\nOtherwise, N.");
+                                                                    if (ngutana.equalsIgnoreCase("y")) {
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            }
+                                                            break;
+                                                        }
+                                                        int kulang3 = bayadDyud - kulang2;
+                                                        if (kulang2 < bayadDyud) {
+                                                            JOptionPane.showMessageDialog(null, "=========TRANSACTION FAILED==========\nYOU STILL HAVE TO PAY: Php " + kulang3 + "\n\n====DUE TO MANY FAILED TRANSACTION====\n\nYOU ARE TO BE REDIRECTED TO\nTHE CHECKOUT MENU TO PAY AGAIN");
+                                                            continue;
+
+                                                        }
+                                                        break;
+
+                                                    }
+
+                                                }
+
+                                            }
+                                            if (sureBa.equalsIgnoreCase("n")) {
+                                                balik = true;
+                                                total = 0;
+                                                cost = false;
+                                                resibo = "";
+
+                                                JOptionPane.showMessageDialog(null, "YOU ARE TO BE REDIRECTED TO SELECT ORDERS AGAIN");
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+}
